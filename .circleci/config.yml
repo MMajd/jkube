@@ -16,8 +16,8 @@ version: 2
 
 jobs:
   test:
-    machine:
-      image: ubuntu-2004:202201-02
+    docker:
+      - image: cimg/openjdk:8.0
     steps:
     - checkout
     - restore_cache:
@@ -34,8 +34,8 @@ jobs:
         - ~/.m2
 
   build:
-    machine:
-      image: ubuntu-2004:202201-02
+    docker:
+      - image: cimg/openjdk:8.0
     steps:
     - checkout
     - restore_cache:
@@ -50,8 +50,8 @@ jobs:
         - ~/.m2
 
   javadoc:
-    machine:
-      image: ubuntu-2004:202201-02
+    docker:
+      - image: cimg/openjdk:8.0
     steps:
     - checkout
     - restore_cache:
